@@ -11,13 +11,12 @@ if (PYTHONLIBS_FOUND)
     message("Using default python version: " ${PYTHONLIBS_VERSION_STRING})
 endif()
 
-
-add_subdirectory(external/pybind11)
-include_directories(SYSTEM external/pybind11/include)
-include_directories(SYSTEM external/eigen)
+find_package(Eigen3 REQUIRED)
+find_package(pybind11 REQUIRED)
 
 file(GLOB_RECURSE SOURCES src/**.cpp)
 add_library(cpp_library SHARED ${SOURCES})
 target_include_directories(cpp_library PUBLIC ./include)
+target_link_libraries(cpp_library Eigen3::Eigen)
 
 add_subdirectory(cpp_library_bindings)
