@@ -300,13 +300,13 @@ function(SP3_add_python_module)
             BUILD_WITH_INSTALL_RPATH FALSE
     )
 
-    if (APPLE)
-        set_target_properties(
-            ${PROJECT_NAME}
-            PROPERTIES
-            INSTALL_NAME_DIR "@rpath/${SP3_PYTHON_PACKAGES_DIRECTORY}/${DESTINATION}"
-        )
-    endif()
+    # if (APPLE)
+    #     set_target_properties(
+    #         ${PROJECT_NAME}
+    #         PROPERTIES
+    #         INSTALL_NAME_DIR "@rpath/${SP3_PYTHON_PACKAGES_DIRECTORY}/${DESTINATION}"
+    #     )
+    # endif()
 
     if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
         set_target_properties(
