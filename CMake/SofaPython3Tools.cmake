@@ -148,7 +148,7 @@ function(SP3_add_python_module)
 
     find_package(pybind11 CONFIG QUIET REQUIRED)
 
-    pybind11_add_module(${A_TARGET} MODULE "${A_SOURCES}")
+    pybind11_add_module(${A_TARGET} SHARED "${A_SOURCES}")
     add_library(Foo::${A_TARGET} ALIAS ${A_TARGET})
 
     set_target_properties(${A_TARGET}
