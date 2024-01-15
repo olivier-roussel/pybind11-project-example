@@ -2,10 +2,23 @@
 
 #include <iostream>
 
-void cpp_library::Foo::f() {
-    std::cout << "invoked cpp_library::Foo::f()" << std::endl;
+namespace cpp_library
+{
+
+void Foo::Init()
+{
+  std::cout << "invoked Foo::Init()" << std::endl;
 }
 
-void cpp_library::Foo::Child::g() {
-    std::cout << "invoked cpp_library::Foo::Child::g()" << std::endl;
+void Foo::Release()
+{
+  std::cout << "invoked Foo::Release()" << std::endl;
 }
+
+void init()
+{
+  std::cout << "invoked main init()" << std::endl;
+  Foo::Init();
+}
+
+} // cpp_library

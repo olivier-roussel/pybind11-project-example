@@ -3,17 +3,12 @@
 
 namespace cpp_library{
 
-
-class CppException : public std::runtime_error {
-  using std::runtime_error::runtime_error;
+class Foo {
+public:
+    static void Init();
+    static void Release();
 };
 
-struct Foo {
-    void f();
-
-    struct Child {
-        void g();
-    };
-};
+void init();
 
 }
