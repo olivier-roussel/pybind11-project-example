@@ -16,10 +16,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Enable use of folder for IDE like VS
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+#set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # Set the minimum python version to 3.7
-set(PYBIND11_PYTHON_VERSION 3.7)
+#set(PYBIND11_PYTHON_VERSION 3.7)
 
 # Find Python3
 # find_package(Python ${PYBIND11_PYTHON_VERSION} COMPONENTS Interpreter Development REQUIRED)
@@ -58,7 +58,7 @@ set(PYBIND11_PYTHON_VERSION 3.7)
 # endif()
 
 # Set the minimum pybind11 version to 2.3 (before that the pybind11::embed target did not exist)
-find_package(pybind11 2.3 CONFIG QUIET REQUIRED)
+find_package(pybind11 2.3 CONFIG REQUIRED)
 
 set(SP3_PYTHON_PACKAGES_DIRECTORY
     "python3/site-packages"
