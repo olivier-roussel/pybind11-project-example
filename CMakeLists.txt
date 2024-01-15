@@ -204,6 +204,6 @@ install(FILES
 file(GLOB_RECURSE LIB_SOURCES src/**.cpp)
 add_library(FooLib SHARED ${LIB_SOURCES})
 target_include_directories(FooLib PUBLIC ./include)
-# target_link_libraries(FooLib Eigen3::Eigen)
+target_link_libraries(FooLib PRIVATE pybind11::embed)
 
 add_subdirectory(cpp_library_bindings)
