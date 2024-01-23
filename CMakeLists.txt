@@ -5,5 +5,6 @@ find_package(pybind11 REQUIRED)
 
 add_library(cpp_library SHARED src/Foo.cpp)
 target_include_directories(cpp_library PUBLIC ./include)
+target_link_libraries(cpp_library PRIVATE pybind11::embed)
 
 add_subdirectory(cpp_library_bindings)
