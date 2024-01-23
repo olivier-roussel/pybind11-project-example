@@ -10,11 +10,6 @@ void Foo::Init()
   std::cout << "invoked Foo::Init()" << std::endl;
 }
 
-void Foo::Release()
-{
-  std::cout << "invoked Foo::Release()" << std::endl;
-}
-
 void init()
 {
   std::cout << "invoked main init()" << std::endl;

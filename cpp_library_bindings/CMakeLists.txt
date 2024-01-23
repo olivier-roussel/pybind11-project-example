@@ -1,9 +1,5 @@
-file(GLOB_RECURSE PYXMOLPP_SOURCES
-        _core/**.cpp
-        _core/**.h
-)
-set(FOO_TARGET _core)
+set(TARGET _core)
 
-pybind11_add_module(${FOO_TARGET} SHARED ${PYXMOLPP_SOURCES})
-target_include_directories(${FOO_TARGET} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/_core)
-target_link_libraries(${FOO_TARGET} PRIVATE cpp_library)
+pybind11_add_module(${TARGET} SHARED _core/cpp_library.cpp)
+target_include_directories(${TARGET} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/_core)
+target_link_libraries(${TARGET} PRIVATE cpp_library)
